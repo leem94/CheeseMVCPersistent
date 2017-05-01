@@ -5,18 +5,17 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using CheeseMVC.Data;
 
-
 namespace CheeseMVC.Migrations
 
 {
-
     [DbContext(typeof(CheeseDbContext))]
+    [Migration("20170422211633_AddCategory")]
 
-    partial class CheeseDbContextModelSnapshot : ModelSnapshot
+    partial class AddCategory
 
     {
 
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
 
         {
 
@@ -25,8 +24,6 @@ namespace CheeseMVC.Migrations
                 .HasAnnotation("ProductVersion", "1.0.1")
 
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-
 
             modelBuilder.Entity("CheeseMVC.Models.Cheese", b =>
 
@@ -50,6 +47,8 @@ namespace CheeseMVC.Migrations
 
             });
 
+
+
             modelBuilder.Entity("CheeseMVC.Models.CheeseCategory", b =>
 
             {
@@ -58,13 +57,21 @@ namespace CheeseMVC.Migrations
 
                     .ValueGeneratedOnAdd();
 
+
+
                 b.Property<string>("Name");
 
+
+
                 b.HasKey("ID");
+
+
 
                 b.ToTable("Categories");
 
             });
+
+
 
             modelBuilder.Entity("CheeseMVC.Models.CheeseMenu", b =>
 

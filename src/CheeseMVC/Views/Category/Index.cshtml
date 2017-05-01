@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CheeseMVC.Models.CheeseCategory>
+
+<h1>Categories</h1>
+
+<ul>
+
+    @{foreach (var category in Model)
+        {
+
+            <li>@category.Name</li>
+
+        }
+    }
+
+</ul>
+
+
+
+@if (Model == null || !Model.Any())
+
+{
+
+    <p>No Categories yet!</p>
+
+}
+
+
+<p><a asp-controller="Category" asp-action="Add">Add Category</a></p>
